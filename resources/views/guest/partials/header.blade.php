@@ -3,9 +3,9 @@
         <div class="row d-flex flex-column">
             <div class="col"></div>
             {{-- top-part --}}
-            <div class="col d-flex justify-content-between">
+            <div class="col d-flex justify-content-around">
                 {{-- logo --}}
-                <a href="{{route('home')}}"><img src="{{asset('img/dc-logo.png')}}" alt="dc-logo"></a>
+                <a class="my-3" href="{{route('home')}}"><img src="{{asset('img/dc-logo.png')}}" alt="dc-logo"></a>
                 {{-- navbar --}}
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">

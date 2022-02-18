@@ -18,6 +18,21 @@ Route::get('/', function () {
     return view('guest.home', $data);
 })->name('home');
 
+Route::get('/comics/{id}', function ($id) {
+    $collection = collect(config('comics'));
+    $comic = $collection->where('id', $id);
+
+    $comicAlone = '';
+    foreach ($comic as $value) {
+        $comicAlone = $value;
+    }
+
+    return view('guest.comic', [
+        'comic' => $comicAlone,
+        'namePage' => $comicAlone['title'],
+    ]);
+})->name('comic');
+
 Route::get('/characters', function () {
     $data = ['namePage' => 'characters'];
     return view('guest.characters', $data);
